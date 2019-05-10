@@ -24,7 +24,7 @@ public class QueryContactsServlet extends HttpServlet {
         //当前页
         int currentPage = 1;
         //每页显示条数
-        int pageSize = 5;
+        int pageSize = 10;
 
         if (paramCurrentPage != null) currentPage = Integer.parseInt(paramCurrentPage);
         if (paramPageSize != null) pageSize = Integer.parseInt(paramPageSize);

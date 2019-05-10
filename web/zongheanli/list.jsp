@@ -80,13 +80,12 @@
             <td colspan="8" align="center" class="form-inline">
                 <c:forEach begin="1" end="${pageCount}" var="pageNum">
                     <a class="btn btn-default <c:if test="${pageNum == currentPage}">btn-success</c:if>"
-                       href="query_contacts?currentPage=${pageNum}">${pageNum}</a>
+                       href="query_contacts?currentPage=${pageNum}&pageSize=${pageSize}">${pageNum}</a>
                 </c:forEach>
                 <select class="form-control" onchange="changePageSize(this.value)">
-                    <option value="0">-请选择-</option>
-                    <option value="5">5条/页</option>
-                    <option value="10">10条/页</option>
-                    <option value="15">15条/页</option>
+                    <c:forEach begin="5" end="15" step="5" var="pageItem">
+                        <option value="${pageItem}" <c:if test="${pageItem == pageSize}">selected</c:if>>${pageItem}条/页</option>
+                    </c:forEach>
                 </select>
             </td>
         </tr>
